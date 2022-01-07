@@ -1,0 +1,166 @@
+Q1.A Manufacturing company wants to maintain Product Information. You need to define an Entity class to hold Product Information and generate a DLL. You also need to test this class usage by writing a Console application as a client.
+
+Task 1: Define a class called “Product” with the following fields:
+
+ProductId, ProductName, Description, Cost, Quantity, and ProductSoldDate
+
+Define the functions to set the values of each property and to get the values in the class: Compile the class to generate a DLL.
+
+Task 2: Create a Console application and use this class. Create an object of this class. Accept the values from the user and assign the members.
+
+Task 3: Modify the console application to define an array of objects to hold 10 records of Product. Accept the details of 10 Products from the user using a loop. Display the ProductName and Description of all the Products.
+
+Task 4: Modify the class to add some more properties into the class and update the DLL and see the output again.
+
+
+Product.cs
+-----------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ProductDetails
+{
+    public class Product
+    {
+        //fields
+        int productId;
+        string productName;
+        string productDes;
+        double productCost;
+        int productQuantity;
+        static int count;
+        DateTime productSold;
+        double productRating;
+        string productReview;
+
+
+        //properties to get/set values for the fields
+        //creating property for ProductId
+
+        public Product()
+        {
+            count++;
+            productId = count;
+            productSold = DateTime.Now;
+        }
+
+        public double PRating{
+            set { productRating = value; }
+            get { return productRating; }
+        }
+
+        public int PID
+        {
+         // set { productId = value; }
+            get { return productId; }
+        }
+        public string PName
+        {
+            set { productName = value; }
+            get { return productName; }
+        }
+        public string PDescription
+        {
+            set { productDes = value; }
+
+            get { return productDes; }
+        } 
+        public double PCost
+        {
+            set { productCost = value; }
+            get { return productCost; }
+        }
+        public DateTime SoldDate
+        {
+            set { productSold = value; }
+            get { return productSold; }
+        }
+        public int PQuantity
+        {
+            set { productQuantity = value; }
+            get { return productQuantity; }
+
+        }
+        public string PReview
+         {
+            set { productReview = value; }
+            get { return productReview; }
+        }
+
+        public DateTime PSold
+        {
+         // set { productSold=value; }
+            get { return productSold; }
+        }
+    }
+}
+
+
+=========================================================
+
+
+Program.cs
+------------
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using ProductDetails;
+
+namespace ProductApplication
+{
+    class Program
+    {
+        static void Main()
+        {
+            Product[] p1 = new Product[10];
+            for (int i = 0; i < p1.Length; i++)
+            {
+                p1[i] = new Product();
+             // Console.WriteLine("Enter Product ID ");
+
+              //p1.PID = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter Product Name ");
+
+                p1[i].PName = Console.ReadLine();
+
+                Console.WriteLine("Enter Product Cost ");
+                p1[i].PCost = Convert.ToDouble(Console.ReadLine());
+
+                Console.WriteLine("Enter Product Description ");
+                p1[i].PDescription = Console.ReadLine();
+
+                Console.WriteLine("Enter Quantity of Products ");
+                p1[i].PQuantity = Convert.ToInt32(Console.ReadLine());
+                 
+                Console.WriteLine("Enter Product Review ");
+                p1[i].PReview = Console.ReadLine();
+
+                Console.WriteLine("Enter Product Rating ");
+                p1[i].PRating = Convert.ToDouble(Console.ReadLine());
+            }
+
+            for (int i = 0; i < p1.Length; i++)
+            {
+
+
+                Console.WriteLine("ProductId = " + p1[i].PID);
+                Console.WriteLine("Name = " + p1[i].PName);
+                Console.WriteLine("Description = " + p1[i].PDescription);
+                Console.WriteLine("cost= " + p1[i].PCost);
+                Console.WriteLine("Quantity= " + p1[i].PQuantity);
+                Console.WriteLine("Product Rating = " + p1[i].PRating);
+                Console.WriteLine("Product Review= " +p1[i].PReview);
+                Console.WriteLine("Sold date of Product= " + p1[i].SoldDate.ToLongDateString());
+                Console.ReadLine();
+            }
+        }
+    }
+}

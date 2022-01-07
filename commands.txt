@@ -1,0 +1,13 @@
+=====>ctrl minus  for backward
+
+=====>ctrl shift minus for forward
+
+
+======>ctrl k c to comments
+
+======>ctrl k u to uncomments
+
+
+======> press shift and alt for spacing
+
+

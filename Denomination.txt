@@ -1,0 +1,17 @@
+
+Q3.
+A man has Rs 480 in denomination of 1 Rupee, 5 Rupee and 10 Rupee and all are equal. What are total no of notes required?
+
+    Let number of notes of each denomination be x.
+
+          x+5x+10x=480
+
+          16x=480
+
+            x=30.
+
+   Therefore, total number of notes required will be =3x
+
+                                                     =3*30 
+
+                                                     =90.

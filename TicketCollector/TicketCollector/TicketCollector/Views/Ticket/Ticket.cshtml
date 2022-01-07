@@ -1,0 +1,54 @@
+﻿@model TicketCollector.Models.TicketModel
+
+<h1>Enter Ticket Details</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4 ticket"> 
+        
+        <form asp-action="Create">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TicketNo" class="control-label"></label>
+                <input asp-for="TicketNo" class="form-control" />
+                <span asp-validation-for="TicketNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TicketColor" class="control-label"></label>
+                <input asp-for="TicketColor" class="form-control" />
+                <span asp-validation-for="TicketColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IssuerName" class="control-label"></label>
+                <input asp-for="IssuerName" class="form-control" />
+                <span asp-validation-for="IssuerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ReceiverId" class="control-label"></label>
+                <input asp-for="ReceiverId" class="form-control" />
+                <span asp-validation-for="ReceiverId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" />
+            </div>
+            <span>@ViewBag.Result</span>
+            <style>
+                body {
+                    background-image: url("https://d3ecqbn6etsqar.cloudfront.net/lprqTM9U8Er-KeH1pNGGs5PUMyA=/0x720/smart/163710.jpg");
+                    font-style: italic;
+                    font-weight:900;
+                    font-size:x-large;
+                }
+                .ticket{
+                    border-radius:20px;
+                    padding:20px;
+                    background-color:chocolate;
+                }
+            </style>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

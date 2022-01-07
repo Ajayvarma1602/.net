@@ -1,0 +1,66 @@
+Collecting user appointment details via web app . so web app take care to push the data to blob storage.
+so in web app we are using mvc to collect the information from user that app will convert the data user information to json format that json format will be pushed to the particular blob.
+
+
+******
+ Azure is a public cloud computing platform—with solutions including Infrastructure as a Service (IaaS),
+ Platform as a Service (PaaS), and Software as a Service (SaaS) that can be used for 
+ services such as analytics, virtual computing, storage, networking, and much more.
+******
+Azure Logic Apps is a cloud-based platform for creating and running automated workflows that integrate your apps, data, services, and systems. 
+With this platform, you can quickly develop highly scalable integration solutions for your enterprise and business-to-business (B2B) scenarios
+******
+When you create a logic app in Azure Logic Apps, your logic app has an underlying workflow definition that describes the actual logic that runs in your logic app. That workflow definition uses JSON and follows a structure that's validated by the Workflow Definition Language schema
+
+ALTER TABLE [dbo].[SuccessTable]
+ADD Id int identity(1,1) primary key
+
+
+CREATE TRIGGER newtrigger 
+ON Database
+FOR CREATE_TABLE
+AS
+BEGIN
+Print "success"
+END
+
+Create Table test (Id int)
+
+
+1.what is benifit of azure function?
+Azure Functions is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs.
+
+Azure functions and lambda functions are two new serverless technologies that are growing faster than anything else in the cloud development
+
+2.when function will be work in azure?
+Azure functions' execution is triggered when an event is fired.
+ Azure functions are compute-on-demand and that is scalable. 
+When demand of execution increases, more resources are allocated automatically to the service and when requests fall, all extra resources and application instances drop off automatically.
+
+
+3.components of logical app?
+
+Azure Logic Apps is a cloud-based platform for creating and running automated workflows that integrate your apps, data, services, and systems.
+ With this platform, you can quickly develop highly scalable integration solutions for your enterprise and business-to-business (B2B) scenarios. 
+
+
+Schedule and send email notifications using Office 365 when a specific event happens, for example, a new file is uploaded.
+
+Route and process customer orders across on-premises systems and cloud services.
+
+Move uploaded files from an SFTP or FTP server to Azure Storage.
+
+Monitor tweets, analyze the sentiment, and create alerts or tasks for items that need review.
+
+4.what is triggers and action?
+
+An Azure Function Trigger is a part of a function's stack that tells Azure how the function is invoked.
+ The most common function triggers are HTTP, Timer, and Blob: ... Blob storage describes a function whose logic is executed when a file is uploaded or updated in an Azure Blob Storage instance.
+
+Each time the trigger fires, the Logic App engine creates a Logic App instance that runs the actions in the workflow.
+ These actions can also include data conversions and flow controls, such as conditional statements, switch statements, loops, and branching. 
+As we have seen what a Logic App is and how it works.
+
+5.what is access key?
+When you create a storage account, Azure generates two 512-bit storage account access keys for that account.
+ These keys can be used to authorize access to data in your storage account via Shared Key authorization. ... Using Azure Key Vault makes it easy to rotate your keys without interruption to your applications

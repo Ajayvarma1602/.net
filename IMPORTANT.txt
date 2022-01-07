@@ -1,0 +1,92 @@
+
+
+ Scaffold-DbContext "Data Source=RAVI\SQLEXPRESS;Initial Catalog=BasicDB;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
+
+
+PM> Scaffold-DbContext "Data Source=RAVI\SQLEXPRESS;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
+
+Data Source=RAVI\SQLEXPRESS;Initial Catalog=BasicDB;Integrated Security=True
+
+
+<ItemGroup>
+		<PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="3.11.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.21" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.21">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+	</ItemGroup>
+</Project>
+
+
+Scaffold-DbContext "Server=.\SQLEXPRESS;Database=CompanyDb;Trusted_Connection=True;MultipleActiveResultSets=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
+
+************
+DefaultEndpointsProtocol=https;AccountName=firstaccount002;AccountKey=Faxwn0jUug2dHV4pg0lY/+rFXaI+UMAJnFVNtwPziFTrPTdOv4PnsmrTtVQhKaTpLJWhzPmvjxmH5X2adznjrw==;EndpointSuffix=core.windows.net
+************
+
+create blob in azure
+
+
+RAVI\SQLEXPRESS
+
+
+1.create database
+2.open mvc application(asp.net core web)
+3.packages 
+4.build solution
+5.connection string             "Server=RAVI\\SQLEXPRESS;Database=Assignment1;Trusted_Connection=True;MultipleActiveResultSets=true"                                                                                                                                                                 
+6.nuget tools   scaf   .\
+7.
+8.paste sql server 
+
+services.AddDbContext<CompanyDBContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("WebApplication21Context")));
+
+
+
+
+
+
+
+ 
+    public class Car
+    {
+        public string Name { get; set; }
+        public int Price { get; set; }
+
+    }
+    public class CarImplementation
+    {
+        public int TotalPriceOfAllCars(IList<Car> cars)
+        //{
+        //    var qry = from car in cars select car.Price;
+        //    return qry.Sum();
+        { 
+
+            return cars.Sum(p => p.Price);
+        }
+
+        public string NameOfAllCars(IList<Car> cars)
+        {
+            var qry = from car in cars select car.Name;
+            string name = string.Join(",", qry);
+            return name;
+            
+           // string name="";
+           //foreach(var item in qry)
+           // {
+           //     name += item;
+                
+           // }
+           // return name;
+        }
+        
+        public string PriceOfAllCars(IList<Car> cars)
+        {
+            var qry = from car in cars select car.Price;
+            string price = string.Join(",", qry);
+            return price;
+
+        }

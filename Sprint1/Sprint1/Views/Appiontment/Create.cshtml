@@ -1,0 +1,102 @@
+﻿@model Sprint1.Models.Appointment
+
+@{
+    ViewData["Title"] = "Create";
+}
+<body>
+    <div class="text-center">
+        <h1 style="color:aqua;" >Create Appointment</h1>
+        <hr />
+        <div class="row">
+            <div class="col-md-4">
+                <div class=".center">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        
+                            <div class="form-group">
+                                <label asp-for="Appointmentid" class="control-label"></label>
+                                <input asp-for="Appointmentid" class="form-control" />
+                                <span asp-validation-for="Appointmentid" class="text-danger"></span>
+
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="Description" class="control-label"></label>
+                                <input asp-for="Description" class="form-control" />
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="serverity" class="control-label"></label>
+                                <input asp-for="serverity" class="form-control" />
+                                <span asp-validation-for="serverity" class="text-danger"></span>
+                            </div>
+                        
+                        <div class="form-group">
+                            <label asp-for="AppiontmentRequestdate" class="control-label"></label>
+                            <input asp-for="AppiontmentRequestdate" class="form-control" />
+                            <span asp-validation-for="AppiontmentRequestdate" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Slot" class="control-label"></label>
+                            <input asp-for="Slot" class="form-control" />
+                            <span asp-validation-for="Slot" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="MobileNo" class="control-label"></label>
+                            <input asp-for="MobileNo" class="form-control" />
+                            <span asp-validation-for="MobileNo" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Create" class="btn btn-secondary" />
+                        </div>
+                    </form>
+                    <p>@ViewBag.Result</p>
+                    </div>
+                </div>
+            </div>
+
+        <div>
+            <a asp-action="Index"style="color:darkorange;">Back to List</a>
+        </div>
+    </div>
+</body>
+<style>
+    body {
+        /*background-color:indianred;*/
+        background-image: url("https://www.appointment.com/wp-content/uploads/2020/01/blur-business-clock-composition-364671-1.jpg");
+        background-repeat: no-repeat;
+        background-position:center;
+    }
+    .control-label{
+        font-size:20px;
+        font-weight:bold;
+        color:gold;
+        margin-left:40px;
+    }
+    .form-control{
+        width:300px;
+        margin-left:300px;
+        background:rgba(0,0,0,0.5);
+    }
+
+    .center {
+        margin: 0 auto;
+        width: 60%;
+    }
+
+    form {
+        margin: 0 auto;
+        width: 800px;
+        margin-left:100px;
+       
+    }
+    .container{
+        margin-bottom:50px;
+    }
+    
+
+</style>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
